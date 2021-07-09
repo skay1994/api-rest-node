@@ -3,8 +3,10 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import { errors } from 'celebrate';
 import { AppError } from './config/error/AppError';
-import './database/connect';
 import { routes } from './routes';
+import createConnection from '../src/database/connect';
+
+createConnection();
 
 import swaggerDocs from './swagger.json';
 import swagger from 'swagger-ui-express';
