@@ -6,15 +6,6 @@ Este projeto tem um arquivo chamado .env.example que instrui quais são as vari�
 
 # Configurar Conexao com Banco ​​de Dados
 Este projeto tem um arquivo chamado ormconfig.example.json que instrui quais são as credenciais necessárias no arquivo ormconfig.json
-
-# Development inside a remote container
-### Require docker*
-- Install docker extensio pack in VSCode
-- Install Remote - Containers in VSCode
-- Create .env file
-- Open Container in project root folder
-
-
 # Executar aplicativo no ambiente de desenvolvimento
 ```bash
   yarn dev
