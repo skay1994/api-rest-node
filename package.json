@@ -4,11 +4,12 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "dev": "npx nodemon --exec ts-node --files src/serve.ts",
         "typeorm": "npx ts-node ./node_modules/typeorm/cli.js",
         "prettier": "npx prettier --write --ignore-unknown .",
-        "test": "NODE_ENV=test jest"
-    },
+        "test": "NODE_ENV=test jest",
+        "dev": "npx nodemon --exec ts-node --files src/serve.ts",
+        "build": "nest build"
+      },
     "devDependencies": {
         "@types/bcryptjs": "^2.4.2",
         "@types/dotenv": "^8.2.0",
