@@ -2,6 +2,8 @@ import express from 'express';
 
 require('dotenv').config()
 
+require('./database');
+
 const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./../swagger.json');
