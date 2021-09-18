@@ -5,10 +5,10 @@ abstract class BaseController implements Controller {
     public path = '/';
     public router = express.Router();
 
-    protected intializeRoutes() { }
+    protected routes() { }
 
     public getRoutes(): express.Router {
-        this.intializeRoutes();
+        this.routes();
         return this.router
     }
 }
