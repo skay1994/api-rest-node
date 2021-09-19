@@ -5,12 +5,7 @@ abstract class BaseController implements Controller {
     public path = '/';
     public router = express.Router();
 
-    protected routes() { }
-
-    public getRoutes(): express.Router {
-        this.routes();
-        return this.router
-    }
+    public routes() { }
 }
 
 export default BaseController
