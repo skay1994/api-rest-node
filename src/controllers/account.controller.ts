@@ -16,8 +16,8 @@ class AccountController extends Controller {
     }
 
     private get(request: Request, response: Response) {
-        /*  #swagger.tags = ['User']
-        #swagger.description = 'List user gy id' */
+        /*  #swagger.tags = ['Account']
+        #swagger.description = 'List user by id' */
         accountModel.find({ user_id: request.body.user_id }, (err: any, account: any) => {
             if (account) {
                 response.send({ success: true, account: account });
@@ -28,6 +28,8 @@ class AccountController extends Controller {
     }
 
     private addAmount(request: Request, response: Response) {
+        /*  #swagger.tags = ['Account']
+        #swagger.description = 'Add amount to account' */
         accountModel.updateOne({ user_id: request.body.user_id }, { $inc: { current_balance: request.body.amount } }, (err: any) => {
             if (err) {
                 response.status(404).send({ success: false, error: 'Error on add value to balance' });
