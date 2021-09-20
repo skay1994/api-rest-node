@@ -4,6 +4,7 @@ import { Joi, Segments, celebrate } from 'celebrate'
 
 import Controller from './base.controller'
 import userModel from '../models/user.model'
+import accountModel from '../models/account.model'
 
 import UserCreateSchema from '../formSchemas/users/create.schema'
 import UserUpdateSchema from '../formSchemas/users/update.schema'
@@ -74,10 +75,18 @@ class UserController extends Controller {
         const hashedPassword = await bcrypt.hash(data.password, 10);
         const user = await userModel.create({
             ...data,
+            current_balance: 0.00,
             password: hashedPassword,
         });
-        user.password = '';
-        response.send({ success: true, users: [user] });
+
+        const account = await accountModel.create({
+            user_id: user.id,
+            number: Math.floor(Math.random() * 1000),
+            current_balance: 0.00,
+        })
+
+        user.password = ''
+        response.send({ success: true, users: [{ user, account }] });
     }
 
     private updateUser(request: Request, response: Response) {
