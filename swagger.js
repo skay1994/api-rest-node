@@ -19,10 +19,13 @@ const doc = {
             document: "123456789",
             gender: "male",
             birthday: "2000-02-20",
-            account_number: "123456",
-            current_balance: "1234.40",
             is_active: true,
             is_deleted: false,
+        },
+        Account: {
+            user_id: "123456789",
+            account_number: "123456",
+            current_balance: "1234.40",
         },
         CreateUser: {
             firstName: "Jhon",
