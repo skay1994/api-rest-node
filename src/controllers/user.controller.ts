@@ -43,7 +43,16 @@ class UserController extends Controller {
 
     private getById(request: Request, response: Response) {
         /*  #swagger.tags = ['User']
-        #swagger.description = 'List user gy id' */
+        #swagger.description = 'List user by id'
+        
+        #swagger.parameters['id'] = {
+            in: path,
+            description: User id,
+            required: True,
+            type: <string>
+        }
+        
+        */
         userModel.findById(request.params.id, (err: any, user: any) => {
             if (user) {
                 response.send({ success: true, users: user });
@@ -54,7 +63,8 @@ class UserController extends Controller {
     }
 
     private createUser = async (request: Request, response: Response) => {
-        /*	#swagger.requestBody = {
+        /*	#swagger.tags = ['User']
+            #swagger.requestBody = {
                 required: true,
                 content: {
                     "application/json": {
@@ -63,6 +73,12 @@ class UserController extends Controller {
                         }  
                     }
                 }
+            #swagger.responses[200] = {
+                description: User created,
+                schema: {
+                    $ref: "#/definitions/CreateUser"
+                }  
+            }
         } */
 
         const data = request.body;
@@ -98,6 +114,12 @@ class UserController extends Controller {
                         $ref: "#/definitions/UpdateUser"
                     }  
                 }
+            }
+            #swagger.responses[200] = {
+                description: User Updated,
+                schema: {
+                    $ref: "#/definitions/CreateUser"
+                }  
             }
         } */
 
