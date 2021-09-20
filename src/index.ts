@@ -1,4 +1,5 @@
 import express from 'express';
+const { errors } = require('celebrate');
 
 require('dotenv').config()
 
@@ -10,7 +11,9 @@ const swaggerDocument = require('./../swagger.json');
 
 const routers = require('./routes');
 
+app.use(express.json())
 app.use(routers)
+app.use(errors())
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
