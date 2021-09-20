@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js",
-    "prettier": "npx prettier --write --ignore-unknown .",
-    "test": "NODE_ENV=test jest",
-    "dev": "npx nodemon --exec ts-node --files src/serve.ts",
-    "build": "nest build"
+    "dev": "nodemon -L",
+    "start": "esr ./src/index.ts --unhandled-rejections=strict",
+    "start-tsnode": "ts-node -r ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "swagger-autogen": "node swagger.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -33,6 +33,7 @@
     "celebrate": "^14.0.0",
     "class-transformer": "^0.4.0",
     "dotenv": "^10.0.0",
+    "esbuild-runner": "^2.2.1",
     "express": "^4.17.1",
     "mongoose": "^6.0.6",
     "swagger-autogen": "^2.11.2",
