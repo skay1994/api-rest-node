@@ -11,27 +11,36 @@ const doc = {
     consumes: ['application/json'],
     produces: ['application/json'],
     definitions: {
-        Parents: {
-            father: "Simon Doe",
-            mother: "Marie Doe"
-        },
         User: {
-            name: "Jhon Doe",
-            age: 29,
-            parents: {
-                $ref: '#/definitions/Parents'
-            },
-            diplomas: [
-                {
-                    school: "XYZ University",
-                    year: 2020,
-                    completed: true,
-                    internship: {
-                        hours: 290,
-                        location: "XYZ Company"
-                    }
-                }
-            ]
+            firstName: "Jhon",
+            lastName: "Doe",
+            email: "example@example.com",
+            password: "password",
+            document: "123456789",
+            gender: "male",
+            birthday: "2000-02-20",
+            account_number: "123456",
+            current_balance: "1234.40",
+            is_active: true,
+            is_deleted: false,
+        },
+        CreateUser: {
+            firstName: "Jhon",
+            lastName: "Doe",
+            email: "example@example.com",
+            password: "password",
+            password_confirm: "password",
+            document: "123456789",
+            gender: "male",
+            birthday: "2000-02-20",
+        },
+        UpdateUser: {
+            firstName: "Jhon",
+            lastName: "Doe",
+            email: "example@example.com",
+            password: "password",
+            gender: "male",
+            birthday: "2000-02-20",
         },
         AddUser: {
             $name: "Jhon Doe",
