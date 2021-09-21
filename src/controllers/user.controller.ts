@@ -123,7 +123,7 @@ class UserController extends Controller {
             }
         } */
 
-        userModel.updateOne({ _id: request.params.id }, request.body, (err: any) => {
+        userModel.updateOne({ _id: request.params.id }, request.body, null, (err: any) => {
             if (err) {
                 response.send({ success: false, message: "Error updating user!" })
             }

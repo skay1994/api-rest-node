@@ -30,7 +30,7 @@ class AccountController extends Controller {
     private addAmount(request: Request, response: Response) {
         /*  #swagger.tags = ['Account']
         #swagger.description = 'Add amount to account' */
-        accountModel.updateOne({ user_id: request.body.user_id }, { $inc: { current_balance: request.body.amount } }, (err: any) => {
+        accountModel.updateOne({ user_id: request.body.user_id }, { $inc: { current_balance: request.body.amount } }, null, (err: any) => {
             if (err) {
                 response.status(404).send({ success: false, error: 'Error on add value to balance' });
             }
